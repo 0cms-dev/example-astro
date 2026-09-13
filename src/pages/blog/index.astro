@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Blog">
+  <h1>Blog & Insights</h1>
+  <p>Real-world content collections managed with 0CMS.</p>
+
+  <div class="blog-grid">
+    {posts.map(post => (
+      <article class="blog-card card">
+        {post.data.image && (
+          <img src={post.data.image} alt={post.data.title} class="blog-thumb" style="width:100%;height:180px;object-fit:cover;border-radius:6px;margin-bottom:12px;" />
+        )}
+        <div class="blog-card-meta" style="font-size:0.8rem;color:#64748b;margin-bottom:6px;">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+          </time>
+          <span> • By {post.data.author}</span>
+        </div>
+        <h2 style="margin:0 0 8px 0;font-size:1.3rem;">
+          <a href={`${base}/blog/${post.id}/`} style="color:#1e293b;text-decoration:none;">
+            {post.data.title}
+          </a>
+        </h2>
+        <p style="color:#475569;margin-bottom:12px;font-size:0.95rem;">{post.data.description}</p>
+        <a href={`${base}/blog/${post.id}/`} style="color:var(--primary);font-weight:600;text-decoration:none;">
+          Read Article &rarr;
+        </a>
+      </article>
+    ))}
+  </div>
+</Layout>

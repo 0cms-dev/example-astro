@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!DOCTYPE html>
@@ -21,15 +22,21 @@ const { title } = Astro.props;
     .accordion-header { padding: 1rem; background: #f8fafc; cursor: pointer; font-weight: bold; }
     .accordion-content { padding: 1rem; display: none; }
     .accordion-item.active .accordion-content { display: block; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .blog-card { display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .blog-card:hover { transform: translateY(-2px); box-shadow: 0 8px 16px -2px rgb(0 0 0 / 0.12); }
+    .prose p { margin-bottom: 1.25rem; }
+    .prose h2, .prose h3 { margin-top: 2rem; margin-bottom: 0.75rem; }
   </style>
 </head>
 <body>
   <header>
-    <h1><a href="/" style="color:white;text-decoration:none">0CMS Astro</a></h1>
+    <h1><a href={`${base}/`} style="color:white;text-decoration:none">0CMS Astro</a></h1>
     <nav>
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/contact">Contact</a>
+      <a href={`${base}/`}>Home</a>
+      <a href={`${base}/blog/`}>Blog</a>
+      <a href={`${base}/about`}>About</a>
+      <a href={`${base}/contact`}>Contact</a>
     </nav>
   </header>
   <main class="container">

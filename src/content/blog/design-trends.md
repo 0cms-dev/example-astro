@@ -3,8 +3,8 @@ title: "Modern Jamstack Design Trends"
 description: "How minimalist design and component-driven content lead modern websites."
 pubDate: 2026-09-10
 author: "Design Team"
-image: "https://placehold.co/600x400"
-tags: ["Design", "Astro", "Web"]
+image: "/images/blog-design.svg"
+tags: ["Design", "Performance", "StaticWeb"]
 ---
 
 Modern web performance demands minimal client-side JavaScript.

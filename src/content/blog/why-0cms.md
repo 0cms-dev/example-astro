@@ -3,7 +3,7 @@ title: "Why In-Browser Visual Editing Matters"
 description: "Why waiting minutes for local npm installs is a thing of the past."
 pubDate: 2026-09-12
 author: "Martin Gawron"
-image: "https://placehold.co/600x400"
+image: "/images/blog-editing.svg"
 tags: ["Architecture", "Edge", "Productivity"]
 ---
 

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <Layout title="Home">
@@ -9,12 +10,12 @@ import Layout from '../layouts/Layout.astro';
   <h2>Featured Services</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
     <div class="card">
-      <img src="https://placehold.co/600x400" alt="Fast" style="width:100%;border-radius:4px"/>
+      <img src={`${base}/images/fast.svg`} alt="Fast" style="width:100%;border-radius:4px"/>
       <h3>Fast</h3>
       <p>Astro ships zero JS by default — perfect for static sites.</p>
     </div>
     <div class="card">
-      <img src="https://placehold.co/600x400" alt="Flexible" style="width:100%;border-radius:4px"/>
+      <img src={`${base}/images/flexible.svg`} alt="Flexible" style="width:100%;border-radius:4px"/>
       <h3>Flexible</h3>
       <p>Use React, Vue, Svelte or plain HTML alongside Astro components.</p>
     </div>

@@ -3,8 +3,8 @@ title: "Welcome to the 0CMS Astro Blog"
 description: "Discover how zero-friction visual editing changes the Jamstack game."
 pubDate: 2026-09-13
 author: "0CMS Team"
-image: "https://placehold.co/600x400"
-tags: ["Astro", "CMS", "Jamstack"]
+image: "/images/blog-welcome.svg"
+tags: ["Astro", "WebDev", "ZeroCMS"]
 ---
 
 Welcome to our real-world Astro blog demonstration!
